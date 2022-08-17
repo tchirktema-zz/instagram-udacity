@@ -16,14 +16,14 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
  app.get( "/filteredimage", async(req:express.Request, res:express.Response) => {
     let {image_url} = req.query;
     if (!image_url){
-      res.status(400).send('Error: The submitted url is empty');
+      res.status(400).send('Error: Invalid image url');
     } else {
       await filterImageFromURL(image_url).then( function (image_filtered_path){
         res.sendFile(image_filtered_path, () => {       
           deleteLocalFiles([image_filtered_path]);       
         });   
       }).catch(function(err){
-        res.status(400).send('Error:' + err + 'For some reason the image cannot be filtered. Please provide the following ID to our support:' + Math.random().toString(36).substr(2, 9));
+        res.status(400).send('Server Error:' + err );
       });  
 
     }
