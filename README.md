@@ -8,7 +8,7 @@ You'll need to create a new node server. Open a new terminal within the project 
 
 1. Initialize a new project: `npm i`
 2. run the development server with `npm run dev`
-3. try GET /filteredimage?image_url={{}}
+3. Try <http://instagramudacity-env.eba-pscmcuep.us-east-1.elasticbeanstalk.com//filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg>
 
 ### Deploying your system
 
